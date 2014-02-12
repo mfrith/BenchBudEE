@@ -30,6 +30,7 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:BencyBuddy
+LIBS:arduino_shieldsNCL
 LIBS:BenchBuddy-cache
 EELAYER 27 0
 EELAYER END
@@ -37,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 6 9
 Title ""
-Date "9 feb 2014"
+Date "12 feb 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -46,15 +47,15 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 Text HLabel 9350 3050 0    60   Output ~ 0
-Power+
-Text HLabel 9350 3400 0    60   Input ~ 0
-Power-
+FAN_OUT+
+Text HLabel 9350 3400 0    60   Output ~ 0
+FAN_OUT-
 Text HLabel 9200 3750 0    60   Input ~ 0
-Tach
+TACH_IN
 Text HLabel 1450 4000 0    60   Output ~ 0
-Tach_out
+TACH_MEAS
 Text HLabel 1450 3300 0    60   Input ~ 0
-Fan_In
+FAN_EN_N
 $Comp
 L LM324 U?
 U 1 1 52F44E25
@@ -230,7 +231,7 @@ Wire Wire Line
 Wire Wire Line
 	3550 4000 1450 4000
 Text HLabel 1450 3600 0    60   Output ~ 0
-Current Measure
+CURR_MEAS
 Wire Wire Line
 	1450 3650 7700 3650
 Wire Wire Line

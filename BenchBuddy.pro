@@ -1,4 +1,4 @@
-update=2/9/2014 12:07:36 PM
+update=2/10/2014 7:40:26 PM
 version=1
 last_client=eeschema
 [cvpcb]
@@ -85,3 +85,4 @@ LibName28=atmel
 LibName29=contrib
 LibName30=valves
 LibName31=BencyBuddy
+LibName32=arduino_shieldsNCL

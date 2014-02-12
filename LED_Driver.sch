@@ -30,6 +30,7 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:BencyBuddy
+LIBS:arduino_shieldsNCL
 LIBS:BenchBuddy-cache
 EELAYER 27 0
 EELAYER END
@@ -37,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 5 9
 Title ""
-Date "9 feb 2014"
+Date "12 feb 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -45,12 +46,168 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 1950 1750 0    60   Input ~ 0
-EN
-Text HLabel 1950 2100 0    60   Input ~ 0
-FREQ
-Text HLabel 10000 1650 0    60   Output ~ 0
-String+
-Text HLabel 10000 2000 0    60   Input ~ 0
-String-
+Text HLabel 2150 2650 0    60   Input ~ 0
+LED_EN_PWM
+Text HLabel 9400 1550 0    60   Output ~ 0
+LED_STRING+
+Text HLabel 9400 2600 0    60   Output ~ 0
+LED_STRING-
+$Comp
+L AP5726 U?
+U 1 1 52F99132
+P 3350 2650
+F 0 "U?" H 3600 2200 60  0000 C CNN
+F 1 "AP5726" H 3300 2800 60  0000 C CNN
+F 2 "" H 3350 2600 60  0000 C CNN
+F 3 "" H 3350 2600 60  0000 C CNN
+	1    3350 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR?
+U 1 1 52F9981D
+P 2800 1500
+F 0 "#PWR?" H 2800 1590 20  0001 C CNN
+F 1 "+5V" H 2800 1590 30  0000 C CNN
+F 2 "" H 2800 1500 60  0000 C CNN
+F 3 "" H 2800 1500 60  0000 C CNN
+	1    2800 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 52F9982C
+P 2800 2100
+F 0 "#PWR?" H 2800 2100 30  0001 C CNN
+F 1 "GND" H 2800 2030 30  0001 C CNN
+F 2 "" H 2800 2100 60  0000 C CNN
+F 3 "" H 2800 2100 60  0000 C CNN
+	1    2800 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 52F99839
+P 3350 3500
+F 0 "#PWR?" H 3350 3500 30  0001 C CNN
+F 1 "GND" H 3350 3430 30  0001 C CNN
+F 2 "" H 3350 3500 60  0000 C CNN
+F 3 "" H 3350 3500 60  0000 C CNN
+	1    3350 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 52F99841
+P 2800 1800
+F 0 "C?" H 2800 1900 40  0000 L CNN
+F 1 "C" H 2806 1715 40  0000 L CNN
+F 2 "~" H 2838 1650 30  0000 C CNN
+F 3 "~" H 2800 1800 60  0000 C CNN
+	1    2800 1800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2800 1500 2800 1600
+Wire Wire Line
+	2800 2000 2800 2100
+Wire Wire Line
+	2800 1550 3300 1550
+Wire Wire Line
+	3200 1550 3200 1950
+Connection ~ 2800 1550
+$Comp
+L INDUCTOR L?
+U 1 1 52F99856
+P 3600 1550
+F 0 "L?" V 3550 1550 40  0000 C CNN
+F 1 "INDUCTOR" V 3700 1550 40  0000 C CNN
+F 2 "~" H 3600 1550 60  0000 C CNN
+F 3 "~" H 3600 1550 60  0000 C CNN
+	1    3600 1550
+	0    -1   -1   0   
+$EndComp
+Connection ~ 3200 1550
+Wire Wire Line
+	3550 1950 3550 1850
+Wire Wire Line
+	3550 1850 4050 1850
+Wire Wire Line
+	4050 1850 4050 1550
+Wire Wire Line
+	3900 1550 4200 1550
+$Comp
+L DIODESCH D?
+U 1 1 52F99876
+P 4400 1550
+F 0 "D?" H 4400 1650 40  0000 C CNN
+F 1 "DIODESCH" H 4400 1450 40  0000 C CNN
+F 2 "~" H 4400 1550 60  0000 C CNN
+F 3 "~" H 4400 1550 60  0000 C CNN
+	1    4400 1550
+	1    0    0    -1  
+$EndComp
+Connection ~ 4050 1550
+$Comp
+L C C?
+U 1 1 52F99898
+P 8250 1900
+F 0 "C?" H 8250 2000 40  0000 L CNN
+F 1 "C" H 8256 1815 40  0000 L CNN
+F 2 "~" H 8288 1750 30  0000 C CNN
+F 3 "~" H 8250 1900 60  0000 C CNN
+	1    8250 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 52F9989E
+P 8250 2300
+F 0 "#PWR?" H 8250 2300 30  0001 C CNN
+F 1 "GND" H 8250 2230 30  0001 C CNN
+F 2 "" H 8250 2300 60  0000 C CNN
+F 3 "" H 8250 2300 60  0000 C CNN
+	1    8250 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 1550 9350 1550
+Wire Wire Line
+	8250 1550 8250 1700
+Wire Wire Line
+	8250 2100 8250 2300
+Wire Wire Line
+	4700 2550 4700 1550
+Connection ~ 4700 1550
+Wire Wire Line
+	4000 2550 4700 2550
+Wire Wire Line
+	3350 3250 3350 3500
+Wire Wire Line
+	4000 2750 5050 2750
+$Comp
+L R R?
+U 1 1 52F99912
+P 5050 3100
+F 0 "R?" V 5130 3100 40  0000 C CNN
+F 1 "R" V 5057 3101 40  0000 C CNN
+F 2 "~" V 4980 3100 30  0000 C CNN
+F 3 "~" H 5050 3100 30  0000 C CNN
+	1    5050 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5050 3350 5050 3400
+Wire Wire Line
+	5050 3400 3350 3400
+Connection ~ 3350 3400
+Connection ~ 8250 2200
+Connection ~ 5050 2750
+Connection ~ 8250 1550
+Wire Wire Line
+	5050 2850 5050 2600
+Wire Wire Line
+	5050 2600 9350 2600
+Wire Wire Line
+	2150 2650 2700 2650
 $EndSCHEMATC
